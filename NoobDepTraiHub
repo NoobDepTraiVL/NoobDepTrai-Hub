@@ -133,7 +133,7 @@ Duration = 5;
 });
 DiscordLib:Notification("Notification", "Thank For Use", "Okay!") -- The Script The Button To Executes
 end)
-local Tab1 = Win1:Server("Player", "") -- Server/Tab
+local Chann1 = Tab1:Channel("Player") -- Channel 0_0
 Chann1:Button("Esp", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))()
 DiscordLib:Notification("Notification", "Thank For Use", "Okay!") -- The Script The Button To Executes
