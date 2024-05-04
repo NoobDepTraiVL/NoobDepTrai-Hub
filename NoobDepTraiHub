@@ -4,8 +4,9 @@ local Win1 = DiscordLib:Window("NoobDepTrai Hub") -- Title/Name
 
 local Tab1 = Win1:Server("Main", "") -- Server/Tab
 
-local Chann1 = Tab1:Channel("*Main*") -- Channel 0_0
+-- Main🛠️
 
+local Chann1 = Tab1:Channel("*Main*") -- Channel 0_0
 Chann1:Button("Fly Gui V3", function()
 loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Fly-v3-7412"))()
 DiscordLib:Notification("Notification", "Thank For Use", "Okay!") -- The Scirpt The Button Executes
@@ -133,6 +134,9 @@ Duration = 5;
 });
 DiscordLib:Notification("Notification", "Thank For Use", "Okay!") -- The Script The Button To Executes
 end)
+
+Player🔨
+
 local Chann1 = Tab1:Channel("Player") -- Channel 0_0
 Chann1:Button("Esp", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))()
@@ -270,4 +274,10 @@ Toggle.MouseButton1Click:connect(function()
 	end
 end)
 
-local Chann1 = Tab1:Channel("require items") -- Channel 0_0
+Require Hat♨️
+
+local Chann1 = Tab1:Channel("Require Hat") -- Channel 0_0
+Chann1:Button("Require Hat", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Toasty8i/slasher/main/slasher.lua'),true))()
+DiscordLib:Notification("Notification", "Thank For Use", "Okay!") -- The Script The Button To Executes
+end)
