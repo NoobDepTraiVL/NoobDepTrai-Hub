@@ -269,5 +269,5 @@ Toggle.MouseButton1Click:connect(function()
 		Status.TextColor3 = Color3.new(170,0,0)
 	end
 end)
-DiscordLib:Notification("Notification", "Thank For Use", "Okay!") -- The Script The Button To Executes
-end)
+
+local Chann1 = Tab1:Channel("require items") -- Channel 0_0
