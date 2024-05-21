@@ -276,8 +276,8 @@ end)
 
 -- Require Hat♨️
 
-local Chann2 = Tab2:Channel("Require Hat") -- Channel 0_0
-Chann2:Button("Require Hat", function()
+local Chann1 = Tab1:Channel("Require Hat") -- Channel 0_0
+Chann1:Button("Require Hat", function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/Toasty8i/slasher/main/slasher.lua'),true))()
 DiscordLib:Notification("Notification", "Thank For Use", "Okay!") -- The Script The Button To Executes
 end)
