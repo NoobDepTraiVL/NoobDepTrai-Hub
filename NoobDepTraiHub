@@ -273,11 +273,3 @@ Toggle.MouseButton1Click:connect(function()
 		Status.TextColor3 = Color3.new(170,0,0)
 	end
 end)
-
--- Require Hat♨️
-
-local Chann1 = Tab1:Channel("Require Hat") -- Channel 0_0
-Chann1:Button("Require Hat", function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/Toasty8i/slasher/main/slasher.lua'),true))()
-DiscordLib:Notification("Notification", "Thank For Use", "Okay!") -- The Script The Button To Executes
-end)
