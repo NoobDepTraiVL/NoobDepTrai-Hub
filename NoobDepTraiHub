@@ -4,8 +4,6 @@ local Win1 = DiscordLib:Window("NoobDepTrai Hub") -- Title/Name
 
 local Tab1 = Win1:Server("Main", "") -- Server/Tab
 
-
-
 local Chann1 = Tab1:Channel("*Main*") -- Channel 0_0
 Chann1:Button("Fly Gui V3", function()
 loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Fly-v3-7412"))()
@@ -134,8 +132,6 @@ Duration = 5;
 });
 DiscordLib:Notification("Notification", "Thank For Use", "Okay!") -- The Script The Button To Executes
 end)
-
-
 
 local Chann1 = Tab1:Channel("Player") -- Channel 0_0
 Chann1:Button("Esp", function()
