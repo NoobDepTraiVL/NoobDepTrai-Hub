@@ -107,35 +107,9 @@ Cred.TextWrapped = true
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-Chann1:Button("Hubby Script Auto Piano", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/HubbyScripts/Auto-Piano-Hub-V6/main/Auto%20Piano%20Hub%20V6"))()
-DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
-end)
+local Tab2 = Win1:Server("Misc", "") -- Server/Tab
 
-Chann1:Button("Pro Hub", function() loadstring(game:HttpGet(("https://cdn.discordapp.com/attachments/922823751127683082/994188489358835752/Protected.lua"), true))()
-DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
-end)
-
-Chann1:Button("Auto Report Script ( need Keyboard Script)", function() loadstring(game:HttpGet('https://raw.githubusercontent.com/joeengo/Future/main/loadstring.lua', true))()loadstring(game:HttpGet('https://raw.githubusercontent.com/joeengo/Future/main/loadstring.lua', true))()
-DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
-end)
-
-Chann1:Button("Fly Gui", function() loadstring(game:HttpGet('https://pastebin.com/Fejmtv6N'))()
-DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
-end)
-
-Chann1:Button("Energizer", function() loadstring(game:HttpGet("https://pastebin.com/raw/RmD3qNp7", true))()
-DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
-end)
-
-Chann1:Button("Legon X Hub", function() loadstring(game:HttpGet(('https://pastebin.com/raw/Lmaz8vF7'),true))();
-DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
-end)
-
-Chann1:Label("Creds To Respectfull Owner.") -- A Label (Ofc)
-
-local Tab2 = Win1:Server("Fe Script Community", "") -- Server/Tab
-
-local Chann2 = Tab2:Channel("Fe Script 1") -- Channel 0_0
+local Chann2 = Tab2:Channel("Misc") -- Channel 0_0
 
 Chann2:Button("Fe Long Legs R15 Only", function() loadstring(game:HttpGet('https://raw.githubusercontent.com/DigitalityScripts/roblox-scripts/main/Leg%20Resize'))()
 --r15
@@ -170,18 +144,63 @@ Chann2:Button("Coming Soon", function()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-local Chann1 = Tab1:Channel("Natural Disaster Gui") -- Channel 0_0
+local Chann1 = Tab1:Channel("Player") -- Channel 0_0
 
-Chann1:Button("Natural Disaster Survival", function() loadstring(game:HttpGet('https://pastebin.com/raw/FktJaRpR'))()
+Chann1:Button("Noclip", function() local Noclip = nil
+local Clip = nil
+
+function noclip()
+	Clip = false
+	local function Nocl()
+		if Clip == false and game.Players.LocalPlayer.Character ~= nil then
+			for _,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if v:IsA('BasePart') and v.CanCollide and v.Name ~= floatName then
+					v.CanCollide = false
+				end
+			end
+		end
+		wait(0.21) -- basic optimization
+	end
+	Noclip = game:GetService('RunService').Stepped:Connect(Nocl)
+end
+
+function clip()
+	if Noclip then Noclip:Disconnect() end
+	Clip = true
+end
+
+noclip() -- to toggle noclip() and clip()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-Chann1:Button("Natural Disaster 2", function() loadstring(game:HttpGet('https://raw.githubusercontent.com/9NLK7/93qjoadnlaknwldk/main/main'))()
---Made By 1kWoof#0143
+Chann1:Button("Esp", function() loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-Chann1:Button("Natural Disaster 3", function() loadstring(game:HttpGet(('https://raw.githubusercontent.com/MrWitzbold/Natural-disaster-survival-GUI/main/main.lua'),true))()
+Chann1:Button("Hitbox(50)", function() --[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+-- leave a like pls
+
+
+_G.HeadSize = 50
+_G.Disabled = true
+ 
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
