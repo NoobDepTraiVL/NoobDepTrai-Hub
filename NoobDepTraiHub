@@ -22,7 +22,7 @@ Chann1:Button("Infinite Yeild", function() loadstring(game:HttpGet("https://scri
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-Chann1:Button("Fly Gui", function() loadstring(game:Http:Get("https://raw.githubusercontent.com/NoobDepTraiVL/Fly/main/Fly"))()
+Chann1:Button("Fly Gui", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/Fly/main/Fly"))()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
