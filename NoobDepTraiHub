@@ -406,7 +406,7 @@ end)
 
 local Chann2 = Tab2:Channel("Bypass") -- Channel 0_0
 
-Chann1:Button("Fps Boost/Unlocker", function() --[[
+Chann2:Button("Fps Boost/Unlocker", function() --[[
 	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
 ]]
 repeat task.wait() until game:IsLoaded();
