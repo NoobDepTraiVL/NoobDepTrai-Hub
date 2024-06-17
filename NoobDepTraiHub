@@ -382,7 +382,7 @@ end
 DiscordLip:Notification("Notification", "Clicked", "Okay!") -- The Script The Button Executes
 end)
 
-Chann2:Button("Anti Afk', function() wait(0.5)local ba=Instance.new("ScreenGui")
+Chann2:Button("Anti Afk", function() wait(0.5)local ba=Instance.new("ScreenGui")
 local ca=Instance.new("TextLabel")local da=Instance.new("Frame")
 local _b=Instance.new("TextLabel")local ab=Instance.new("TextLabel")ba.Parent=game.CoreGui
 ba.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;ca.Parent=ba;ca.Active=true
