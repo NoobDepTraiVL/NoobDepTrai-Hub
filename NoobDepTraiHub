@@ -107,6 +107,10 @@ Cred.TextWrapped = true
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
+Chann1:Button("Keyboard", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+DiscordLip:Notification("Notification", "Clicked", "Okay!") -- The Script The Button Executes
+end)
+
 local Tab2 = Win1:Server("Misc", "") -- Server/Tab
 
 local Chann2 = Tab2:Channel("Misc") -- Channel 0_0
