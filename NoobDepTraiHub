@@ -287,26 +287,115 @@ end)
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-Chann1:Button("Natural Disaster 4", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/LoadstringUjHI6RQpz2o8", true))()
+local Chann1 = Tab1:Channel("Anti") -- Channel 0_0
+
+Chann1:Button("Anti Fling", function() loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-antifling-script-ig-4705"))()
+DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
+
+Chann1:Button("Anti Fall", function() net = true
+notify = false
+
+
+loadstring("\13\10\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\71\101\116\79\98\106\101\99\116\115\40\34\114\98\120\97\115\115\101\116\105\100\58\47\47\55\50\53\55\55\54\49\55\56\53\34\41\91\49\93\46\83\111\117\114\99\101\41\40\41\13\10")()
+
+wait(0)
+game.StarterGui:SetCore("SendNotification", {
+Title = "THANKS FOR USING ANTI FALL SCRIPT";
+Text = "Anti fall script activated.";
+})
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/NoobDepTraiVL/main/NoobDepTrai Hub"))()
+mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "NORMAL TP FOR ANTI FALL SCRIPT"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,0,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-local Chann1 = Tab1:Channel("Bedwars Gui") -- Channel 0_0
-
-Chann1:Button("JN HH Bedwars Gui", function() loadstring(game:HttpGet(('https://raw.githubusercontent.com/YourLocalNzi/Ye/main/Jn_V9.txt'),true))()
+Chann1:Button("Anti Kick", function() loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Anti-kick-11846"))()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-Chann1:Button("Dark Rai Bedwars Gui", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/bedwars/main/Script", true))()
+Chann1:Button("Anti Ban", function() loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-ANTI-XHAT-LOGGER-and-ANTI-BAN-8832"))()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-Chann1:Button("JN Bedwars Gui V10", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/YourLocalNzi/Ye/main/JNO10"))()
-DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
-end)
+Chann1:Button("Anti Lag", function() local ToDisable = {
+	Textures = true,
+	VisualEffects = true,
+	Parts = true,
+	Particles = true,
+	Sky = true
+}
 
-Chann1:Button("Suntai Bedwars", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Unknownuser11736/abcd/main/suntaivsystem", true))()
-DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
+local ToEnable = {
+	FullBright = false
+}
+
+local Stuff = {}
+
+for _, v in next, game:GetDescendants() do
+	if ToDisable.Parts then
+		if v:IsA("Part") or v:IsA("Union") or v:IsA("BasePart") then
+			v.Material = Enum.Material.SmoothPlastic
+			table.insert(Stuff, 1, v)
+		end
+	end
+	
+	if ToDisable.Particles then
+		if v:IsA("ParticleEmitter") or v:IsA("Smoke") or v:IsA("Explosion") or v:IsA("Sparkles") or v:IsA("Fire") then
+			v.Enabled = false
+			table.insert(Stuff, 1, v)
+		end
+	end
+	
+	if ToDisable.VisualEffects then
+		if v:IsA("BloomEffect") or v:IsA("BlurEffect") or v:IsA("DepthOfFieldEffect") or v:IsA("SunRaysEffect") then
+			v.Enabled = false
+			table.insert(Stuff, 1, v)
+		end
+	end
+	
+	if ToDisable.Textures then
+		if v:IsA("Decal") or v:IsA("Texture") then
+			v.Texture = ""
+			table.insert(Stuff, 1, v)
+		end
+	end
+	
+	if ToDisable.Sky then
+		if v:IsA("Sky") then
+			v.Parent = nil
+			table.insert(Stuff, 1, v)
+		end
+	end
+end
+
+game:GetService("TestService"):Message("Effects Disabler Script : Successfully disabled "..#Stuff.." assets / effects. Settings :")
+
+for i, v in next, ToDisable do
+	print(tostring(i)..": "..tostring(v))
+end
+
+if ToEnable.FullBright then
+    local Lighting = game:GetService("Lighting")
+    
+    Lighting.FogColor = Color3.fromRGB(255, 255, 255)
+    Lighting.FogEnd = math.huge
+    Lighting.FogStart = math.huge
+    Lighting.Ambient = Color3.fromRGB(255, 255, 255)
+    Lighting.Brightness = 5
+    Lighting.ColorShift_Bottom = Color3.fromRGB(255, 255, 255)
+    Lighting.ColorShift_Top = Color3.fromRGB(255, 255, 255)
+    Lighting.OutdoorAmbient = Color3.fromRGB(255, 255, 255)
+    Lighting.Outlines = true
+end
+DiscordLip:Notification("Notification", "Clicked", "Okay!") -- The Script The Button Executes
 end)
 
 local Chann1 = Tab1:Channel("Prison Life Gui") -- Channel 0_0
