@@ -291,7 +291,7 @@ end)
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-local Chann1 = Tab2:Channel("Anti") -- Channel 0_0
+local Chann2 = Tab2:Channel("Anti") -- Channel 0_0
 
 Chann2:Button("Anti Fling", function() loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-antifling-script-ig-4705"))()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
