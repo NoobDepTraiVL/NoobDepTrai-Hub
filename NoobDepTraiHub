@@ -406,10 +406,7 @@ end)
 
 local Chann2 = Tab2:Channel("Bypass") -- Channel 0_0
 
-Chann2:Button("Fps Boost/Unlocker", function() --[[
-	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
-]]
-repeat task.wait() until game:IsLoaded();
+Chann2:Button("Fps Boost/Unlocker", function() repeat task.wait() until game:IsLoaded();
 
 getgenv().boostFPS = true
 
@@ -448,10 +445,6 @@ DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Bu
 end)
 
 Chann2:Button("Chat Bypass", function() loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-New-chat-bypass-check-desc-11751"))()
-DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
-end)
-
-Chann1:Button("Saitama Gun ", function() loadstring(game:HttpGet('https://pastebin.com/WLhvCqhe'))()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
