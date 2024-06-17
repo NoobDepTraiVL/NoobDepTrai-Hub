@@ -145,8 +145,7 @@ end)
 
 local Chann1 = Tab1:Channel("Player") -- Channel 0_0
 
-Chann1:Button("Noclip", function()
-local Workspace = game:GetService("Workspace")
+Chann1:Button("Noclip", function() local Workspace = game:GetService("Workspace")
 local CoreGui = game:GetService("CoreGui")
 local Players = game:GetService("Players")
 local Noclip = Instance.new("ScreenGui")
