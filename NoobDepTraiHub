@@ -448,13 +448,13 @@ Chann2:Button("Chat Bypass", function() loadstring(game:HttpGet("https://scriptb
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-local Chann1 = Tab1:Channel("Untitled Hood Gui") -- Channel 0_0
+local Chann1 = Tab1:Channel("Game") -- Channel 0_0
 
-Chann1:Button("Balligusapo Untitled Hood Gui", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/BalligusapoTT/BalligusapoTT/main/UntitledhoodGui"))()
+Chann1:Button("Weird Strict Dad", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/yBloodz/Free-scripts/main/Weird%20Strict%20Dad"))()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-Chann1:Button("Aim", function() loadstring(game:HttpGet('https://pastebin.com/A9F85JaB'))()
+Chann1:Button("Hide And Seek Extreme", function() loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Hide%20And%20Seek%20Extreme'))()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
