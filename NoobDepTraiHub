@@ -127,7 +127,7 @@ Chann2:Button("Fe Trolling Gui", function() loadstring(game:HttpGet("https://scr
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-Chann2:Button("Coming Soon", function() 
+Chann2:Button("Shiftlock", function() loadstring(game:HttpGet('https://raw.githubusercontent.com/Unknownproooolucky/Unknown-Hub-X-Universal-Games/main/Universal/Permanent-Shiftlock-V2'))()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
