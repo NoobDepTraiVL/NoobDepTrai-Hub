@@ -124,7 +124,7 @@ Chann2:Button("Walk on wall", function() loadstring(game:HttpGet("https://raw.gi
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Script The Button Executes
 end)
 
-Chann2:Button("Fe Trolling Gui", function() loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Fe-trolling-gui-11739"))()
+Chann2:Button("Fe Telekinesis V5", function() loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/randomstring0/Qwerty/refs/heads/main/qwerty11.lua"))()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
