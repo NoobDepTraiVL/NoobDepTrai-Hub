@@ -477,7 +477,7 @@ end)
 
 local Chann1 = Tab1:Channel("Admin") -- Channel 0_0
 
-Chann1:Button("Fates Admin", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+Chann1:Button("Admin Hub", function() loadstring(game:HttpGet"https://raw.githubusercontent.com/obeskit/Adminware/main/Adminware")()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
