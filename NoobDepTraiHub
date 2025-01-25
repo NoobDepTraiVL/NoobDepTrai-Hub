@@ -108,7 +108,7 @@ Cred.TextWrapped = true
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-Chann1:Button("Keyboard", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+Chann1:Button("Keyboard-Delta KB!", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt"))()
 DiscordLip:Notification("Notification", "Clicked", "Okay!") -- The Script The Button Executes
 end)
 
@@ -132,7 +132,7 @@ Chann2:Button("Shiftlock", function() loadstring(game:HttpGet('https://raw.githu
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-Chann2:Button("Coming Soon", function() 
+Chann2:Button("Coming Soon", function()  
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
@@ -475,9 +475,9 @@ Chann1:Button("Murder Mystery 2", function() loadstring(game:HttpGet('https://ra
 DiscordLip:Notification("Notification", "Clicked", "Okay!") -- The Script The Button Executes
 end)
 
-local Chann1 = Tab1:Channel("Blox Fruit Gui") -- Channel 0_0
+local Chann1 = Tab1:Channel("Admin") -- Channel 0_0
 
-Chann1:Button("Resin Hub", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/sasaff94/Reskin-Hub/main/README.md"))()
+Chann1:Button("Fates Admin", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
