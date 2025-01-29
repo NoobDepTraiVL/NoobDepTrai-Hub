@@ -3,10 +3,9 @@ local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/daw
 local Win1 = DiscordLib:Window("NoobDepTrai Hub") -- Title/Name
 
 local Tab1 = Win1:Server("Main", "") -- Server/Tab
+local Chann1 = Tab1:Channel("Main") -- Channel
 
-local Chann1 = Tab1:Channel("Main") -- Channel 0_0
-
-Chann1:Button("Shader", function() 
+Chann1:Button("Pshade Ultimate(shader)", function() 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/randomstring0/pshade-ultimate/refs/heads/main/src/cd.lua'))()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
@@ -23,7 +22,7 @@ Chann1:Button("Infinite Yeild", function() loadstring(game:HttpGet('https://raw.
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-Chann1:Button("Fly Gui", function() loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Fly-v3-7412"))()
+Chann1:Button("Fly Gui(v3)", function() loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Fly-v3-7412"))()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
@@ -108,13 +107,13 @@ Cred.TextWrapped = true
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
-Chann1:Button("Keyboard-Delta KB!", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt"))()
+Chann1:Button("Keyboard(Delta KB)", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt"))()
 DiscordLip:Notification("Notification", "Clicked", "Okay!") -- The Script The Button Executes
 end)
 
 local Tab2 = Win1:Server("Misc", "") -- Server/Tab
 
-local Chann2 = Tab2:Channel("Misc") -- Channel 0_0
+local Chann2 = Tab2:Channel("Misc") -- Channel
 
 Chann2:Button("Speed And JumpPower", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Shugare/Speed/main/S", true))()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
@@ -294,7 +293,7 @@ end)
 
 local Chann2 = Tab2:Channel("Anti") -- Channel 0_0
 
-Chann2:Button("Anti Fling", function() loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-antifling-script-ig-4705"))()
+Chann2:Button("Anti Fling", function() loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/AimbotGui/refs/heads/main/Antifling"))()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
 end)
 
