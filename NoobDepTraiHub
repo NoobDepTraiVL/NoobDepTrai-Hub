@@ -474,7 +474,10 @@ Chann1:Button("Murder Mystery 2", function() loadstring(game:HttpGet('https://ra
 DiscordLip:Notification("Notification", "Clicked", "Okay!") -- The Script The Button Executes
 end)
 
+Chann1:Button("Build and battle", function() loadstring(game:HttpGet("https://rawscripts.net/raw/NUKE!-Build-and-Battle!-linhmc-hub-18647"))()
 local Chann1 = Tab1:Channel("Admin") -- Channel 0_0
+DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Script The Button Executes
+end)
 
 Chann1:Button("Admin Hub", function() loadstring(game:HttpGet"https://raw.githubusercontent.com/obeskit/Adminware/main/Adminware")()
 DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
