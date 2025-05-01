@@ -193,15 +193,19 @@ local function onChatted(msg)
                 tool.Parent = workspace
             end
             return
-                elseif single == "droptools" or single == "dropitems" or single == "dts" or single == "dis" then
-            local char = player.Character
-            if char then
-                for _, tool in ipairs(char:GetChildren()) do
-                    if tool:IsA("Tool") and tool:IsDescendantOf(char) then
-                        tool:Drop()
+        elseif single == "droptool" or single == "dropitem" or single == "dt" or single == "di" then
+            local function dropToolFrom(container)
+                for _, tool in ipairs(container:GetChildren()) do
+                    if tool:IsA("Tool") then
+                        tool.Parent = player.Character
+                        wait()
+                        tool:Deactivate()
+                        tool.Parent = workspace
                     end
                 end
             end
+            dropToolFrom(player.Backpack)
+            dropToolFrom(player.Character)
             return
         elseif single == "cmds" then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/NoobLoTretHub/refs/heads/main/NoobLoTretHub"))()
