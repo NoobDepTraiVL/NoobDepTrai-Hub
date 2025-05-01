@@ -152,16 +152,6 @@ local function onChatted(msg)
         cmdType, arg = cmdType:lower(), arg:lower()
         if (cmdType == "teleportlocation" or cmdType == "tplc") and locations[arg] then
             hrp.CFrame = CFrame.new(locations[arg])
-        elseif single == "droptools" or single == "dropitems" or single == "dts" or single == "dis" then
-            local char = player.Character
-            if char then
-                for _, tool in ipairs(char:GetChildren()) do
-                    if tool:IsA("Tool") and tool:IsDescendantOf(char) then
-                        tool:Drop()
-                    end
-                end
-            end
-            return
         elseif cmdType == "speed" or cmdType == "ws" then
             char:FindFirstChildOfClass("Humanoid").WalkSpeed = tonumber(arg) or 16
         elseif cmdType == "jumppower" or cmdType == "jp" then
@@ -187,28 +177,62 @@ local function onChatted(msg)
         elseif single == "unnoclip" or single == "clip" then
             toggleNoclip(false)
             return
-                elseif single == "droptool" or single == "dropitem" or single == "dt" or single == "di" then
+        elseif single == "droptool" or single == "dropitem" or single == "dt" or single == "di" then
             local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
             if tool then
                 tool.Parent = workspace
             end
             return
         elseif single == "droptools" or single == "dropitems" or single == "dts" or single == "dis" then
-            local function dropToolFrom(container)
-                for _, tool in ipairs(container:GetChildren()) do
-                    if tool:IsA("Tool") then
-                        tool.Parent = player.Character
-                        wait()
-                        tool:Deactivate()
-                        tool.Parent = workspace
+            local char = player.Character
+            if char then
+                for _, tool in ipairs(char:GetChildren()) do
+                    if tool:IsA("Tool") and tool:IsDescendantOf(char) then
+                        tool:Drop()
                     end
                 end
             end
-            dropToolFrom(player.Backpack)
-            dropToolFrom(player.Character)
             return
         elseif single == "cmds" then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/NoobLoTretHub/refs/heads/main/NoobLoTretHub"))()
             return
         end
-player.Chatted:Connect(onChatted)
+
+        if baseTeleports[single] then
+            hrp.CFrame = CFrame.new(baseTeleports[single])
+            return
+        end
+
+        local itemPos = getItemPos(single)
+        if itemPos then
+            hrp.CFrame = CFrame.new(itemPos)
+            task.wait(0.02)
+            if hrp and hrp.Parent then hrp.CFrame = original end
+            return
+        end
+
+        local group = getGroup(single)
+        if group then
+            for _, item in ipairs(group) do
+                local pos = getItemPos(item)
+                if pos then
+                    hrp.CFrame = CFrame.new(pos)
+                    task.wait(single:match("all") and 0.2 or 0.05)
+                end
+            end
+            if hrp and hrp.Parent then hrp.CFrame = original end
+            return
+        end
+
+        local teleSet = getSpecialTeleport(single)
+        if teleSet then
+            for _, pos in ipairs(teleSet) do
+                hrp.CFrame = CFrame.new(pos)
+                task.wait(0.05)
+            end
+            if hrp and hrp.Parent then hrp.CFrame = original end
+        end
+    end
+end
+
+Players.LocalPlayer.Chatted:Connect(onChatted)
