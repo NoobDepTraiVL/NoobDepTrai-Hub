@@ -184,6 +184,16 @@ local function onChatted(msg)
                 tool.Parent = workspace
             end
             return
+                elseif single == "droptools" or single == "dropitems" or single == "dts" or single == "dis" then
+            local char = player.Character
+            if char then
+                for _, tool in ipairs(char:GetChildren()) do
+                    if tool:IsA("Tool") then
+                        tool.Parent = workspace
+                    end
+                end
+            end
+            return
         elseif single == "cmds" then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/NoobLoTretHub/refs/heads/main/NoobLoTretHub"))()
             return
