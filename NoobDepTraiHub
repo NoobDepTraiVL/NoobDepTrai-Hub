@@ -41,8 +41,8 @@ local groupCommands = {
 
     ["megavipitems"] = {"megavipsword", "medkit15", "doublegravitycoil"},
     ["megaviptools"] = {"megavipsword", "medkit15", "doublegravitycoil"},
-    ["mgi"] = {"megavipsword", "medkit15", "doublegravitycoil"},
-    ["mgt"] = {"megavipsword", "medkit15", "doublegravitycoil"},
+    ["mvi"] = {"megavipsword", "medkit15", "doublegravitycoil"},
+    ["mvt"] = {"megavipsword", "medkit15", "doublegravitycoil"},
 
     ["ubervipitems"] = {"epickatana", "fusioncoil", "medkitunlimited", "superfreezeray"},
     ["uberviptools"] = {"epickatana", "fusioncoil", "medkitunlimited", "superfreezeray"},
