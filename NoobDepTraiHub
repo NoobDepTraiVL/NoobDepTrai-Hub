@@ -193,7 +193,7 @@ local function onChatted(msg)
                 tool.Parent = workspace
             end
             return
-        elseif single == "droptool" or single == "dropitem" or single == "dt" or single == "di" then
+        elseif single == "droptools" or single == "dropitems" or single == "dts" or single == "dis" then
             local function dropToolFrom(container)
                 for _, tool in ipairs(container:GetChildren()) do
                     if tool:IsA("Tool") then
