@@ -250,3 +250,73 @@ local function onChatted(msg)
 end
 
 Players.LocalPlayer.Chatted:Connect(onChatted)
+
+    local itemCmd, target = msg:match("^:(%S+)%s+(%S+)$")
+    if itemCmd and target then
+        itemCmd, target = itemCmd:lower(), target:lower()
+        local function teleportTo(pos, waitTime)
+            hrp.CFrame = CFrame.new(pos)
+            task.wait(waitTime or 0.01)
+        end
+
+        local function getPlayerList(target)
+            local list = {}
+            for _, p in pairs(Players:GetPlayers()) do
+                if target == "all" or (target == "others" and p ~= player) then
+                    table.insert(list, p)
+                elseif target == "random" then
+                    local all = Players:GetPlayers()
+                    return {all[math.random(1, #all)]}
+                elseif p.Name:lower():sub(1, #target) == target then
+                    return {p}
+                end
+            end
+            return list
+        end
+
+        local targets = getPlayerList(target)
+        local items = getGroup(itemCmd) or {itemCmd}
+
+        local validItems = {}
+        for _, item in ipairs(items) do
+            local pos = getItemPos(item)
+            if pos then table.insert(validItems, {name = item, pos = pos}) end
+        end
+
+        if #validItems > 0 and #targets > 0 then
+            local droppedTo = {}
+            for _, playerTarget in ipairs(targets) do
+                for _, item in ipairs(validItems) do
+                    if playerTarget.Character then
+                        local backpack = playerTarget:FindFirstChildOfClass("Backpack")
+                        local alreadyHas = false
+                        if backpack then
+                            for _, tool in ipairs(backpack:GetChildren()) do
+                                if tool.Name:lower() == item.name then
+            end                     alreadyHas = true
+                                    break
+                                end
+                            end
+                        end
+                        if not alreadyHas then
+                            teleportTo(item.pos, 0.01)
+                            teleportTo(playerTarget.Character:WaitForChild("HumanoidRootPart").Position - Vector3.new(0, 0, 3), 0.03)
+                            local held = player.Character and player.Character:FindFirstChildOfClass("Tool")
+                            if held then held:Drop() end
+                            table.insert(droppedTo, playerTarget)
+                        end
+                    end
+                end
+            end
+
+            -- Nếu là "all", lấy thêm 1 item cho bản thân
+            if target == "all" then
+                for _, item in ipairs(validItems) do
+                    teleportTo(item.pos, 0.01)
+                end
+            end
+
+            teleportTo(original, 0.05)
+            return
+        end
+    end
