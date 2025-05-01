@@ -249,62 +249,51 @@ local function onChatted(msg)
     end
 end
 
-Players.LocalPlayer.Chatted:Connect(onChatted)
 local function onChatted(msg)
     local char = player.Character or player.CharacterAdded:Wait()
     local hrp = char:WaitForChild("HumanoidRootPart")
     local original = hrp.CFrame
 
+    -- Lệnh có dạng :command arg
     local cmdType, arg = msg:match("^:(%w+)%s+(%w+)$")
     if cmdType and arg then
         cmdType, arg = cmdType:lower(), arg:lower()
+
         if (cmdType == "teleportlocation" or cmdType == "tplc") and locations[arg] then
             hrp.CFrame = CFrame.new(locations[arg])
         elseif cmdType == "speed" or cmdType == "ws" then
-            char:FindFirstChildOfClass("Humanoid").WalkSpeed = tonumber(arg) or 16
+            local hum = char:FindFirstChildOfClass("Humanoid")
+            if hum then hum.WalkSpeed = tonumber(arg) or 16 end
         elseif cmdType == "jumppower" or cmdType == "jp" then
-            char:FindFirstChildOfClass("Humanoid").JumpPower = tonumber(arg) or 50
+            local hum = char:FindFirstChildOfClass("Humanoid")
+            if hum then hum.JumpPower = tonumber(arg) or 50 end
         end
         return
     end
 
+    -- Lệnh có dạng :command
     local single = msg:match("^:(%S+)$")
     if single then
         single = single:lower()
+
         if single == "reset" or single == "rs" then
             char:BreakJoints()
-            return
         elseif single == "heal" or single == "h" then
             hrp.CFrame = CFrame.new(healPos)
             task.wait(0.01)
             hrp.CFrame = original
-            return
         elseif single == "noclip" or single == "nc" then
             toggleNoclip(true)
-            return
         elseif single == "unnoclip" or single == "clip" then
             toggleNoclip(false)
-            return
-        elseif single == "droptool" or single == "dropitem" or single == "dt" or single == "di" then
-            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
-            if tool then
-                tool.Parent = workspace
-            end
-            return
         elseif single == "droptools" or single == "dropitems" or single == "dts" or single == "dis" then
-            local function dropToolFrom(container)
-                for _, tool in ipairs(container:GetChildren()) do
-                    if tool:IsA("Tool") then
-                        tool.Parent = player.Character
-                        wait()
-                        tool:Deactivate()
-                        tool.Parent = workspace
-                    end
-                end
+            for _, tool in ipairs(char:GetChildren()) do
+                if tool:IsA("Tool") then tool:Drop() end
             end
-            dropToolFrom(player.Backpack)
-            dropToolFrom(char)
-            return
         end
+        return
     end
+
 end
+
+player.Chatted:Connect(onChatted)
