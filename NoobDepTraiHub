@@ -1,39 +1,10 @@
 local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/lobox920/Notification-Library/Main/Library.lua"))()
-NotificationLibrary:SendNotification("Success", "Load Successfully!", 4)
 
-local defaultPrefix = ":"
-local prefixFile = "Build_And_Battle_prefix.txt"
-local prefix = defaultPrefix
+NotificationLibrary:SendNotification("Success", "Load successfully", 5)
 
-if isfile(prefixFile) then
-    local saved = readfile(prefixFile)
-    if typeof(saved) == "string" and #saved == 1 then
-        prefix = saved
-    end
-end
+NotificationLibrary:SendNotification("Info", "Chat ':cmds' to show commands", 5)
 
-local function notifyCmdsInfo()
-    NotificationLibrary:SendNotification("Info", .. prefix .. "'cmds' to view commands", 5)
-    NotificationLibrary:SendNotification("Info", .. prefix .. "Is Your Prefix!", 5)
-end
-
-notifyCmdsInfo()
-
-addCommand({"prefix", "pf"}, function(args)
-    local newPrefix = args[1]
-    if not newPrefix or #newPrefix ~= 1 then
-        NotificationLibrary:SendNotification("Info", "Prefix", 5)
-        return
-    end
-    prefix = newPrefix
-    NotificationLibrary:SendNotification("Info '" .. prefix .. "'", 5)
-    notifyCmdsInfo()
-end)
-
-addCommand({"saveprefix", "spf"}, function()
-    writefile(prefixFile, prefix)
-    NotificationLibrary:SendNotification("Info" '", .. prefix .. "' Prefix", 5)
-end)
+NotificationLibrary:SendNotification("Info", "Your Prefix is ':'", 5)
 
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
