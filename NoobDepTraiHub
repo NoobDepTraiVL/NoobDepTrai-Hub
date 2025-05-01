@@ -184,14 +184,18 @@ local function onChatted(msg)
             end
             return
         elseif single == "droptools" or single == "dropitems" or single == "dts" or single == "dis" then
-            local char = player.Character
-            if char then
-                for _, tool in ipairs(char:GetChildren()) do
-                    if tool:IsA("Tool") and tool:IsDescendantOf(char) then
-                        tool:Drop()
+            local function dropToolFrom(container)
+                for _, tool in ipairs(container:GetChildren()) do
+                    if tool:IsA("Tool") then
+                        tool.Parent = player.Character
+                        wait()
+                        tool:Deactivate()
+                        tool.Parent = workspace
                     end
                 end
             end
+            dropToolFrom(player.Backpack)
+            dropToolFrom(player.Character)
             return
         elseif single == "cmds" then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/NoobLoTretHub/refs/heads/main/NoobLoTretHub"))()
@@ -228,7 +232,7 @@ local function onChatted(msg)
         if teleSet then
             for _, pos in ipairs(teleSet) do
                 hrp.CFrame = CFrame.new(pos)
-                task.wait(0.05)
+                task.wait(0.01)
             end
             if hrp and hrp.Parent then hrp.CFrame = original end
         end
