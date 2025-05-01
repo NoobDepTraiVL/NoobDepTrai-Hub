@@ -1,7 +1,11 @@
 local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/lobox920/Notification-Library/Main/Library.lua"))()
-NotificationLibrary:SendNotification("Success", "Load successfully", 3)
-NotificationLibrary:SendNotification("Info", "Chat ':cmds' to show commands", 3)
-NotificationLibrary:SendNotification("Info", "Your Prefix is ':'", 3)
+
+NotificationLibrary:SendNotification("Success", "Load successfully", 5)
+
+NotificationLibrary:SendNotification("Info", "Chat ':cmds' to show commands", 5)
+
+NotificationLibrary:SendNotification("Info", "Your Prefix is ':'", 5)
+
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local player = Players.LocalPlayer
@@ -148,11 +152,16 @@ local function onChatted(msg)
         cmdType, arg = cmdType:lower(), arg:lower()
         if (cmdType == "teleportlocation" or cmdType == "tplc") and locations[arg] then
             hrp.CFrame = CFrame.new(locations[arg])
-        elseif (cmdType == "goto" or cmdType == "to") then
-            local target = Players:FindFirstChild(arg)
-            if target and target.Character and target.Character:FindFirstChild("HumanoidRootPart") then
-                hrp.CFrame = target.Character.HumanoidRootPart.CFrame
+        elseif single == "droptools" or single == "dropitems" or single == "dts" or single == "dis" then
+            local char = player.Character
+            if char then
+                for _, tool in ipairs(char:GetChildren()) do
+                    if tool:IsA("Tool") and tool:IsDescendantOf(char) then
+                        tool:Drop()
+                    end
+                end
             end
+            return
         elseif cmdType == "speed" or cmdType == "ws" then
             char:FindFirstChildOfClass("Humanoid").WalkSpeed = tonumber(arg) or 16
         elseif cmdType == "jumppower" or cmdType == "jp" then
@@ -188,8 +197,8 @@ local function onChatted(msg)
             local char = player.Character
             if char then
                 for _, tool in ipairs(char:GetChildren()) do
-                    if tool:IsA("Tool") then
-                        tool.Parent = workspace
+                    if tool:IsA("Tool") and tool:IsDescendantOf(char) then
+                        tool:Drop()
                     end
                 end
             end
