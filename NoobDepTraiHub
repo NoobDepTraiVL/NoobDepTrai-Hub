@@ -217,6 +217,8 @@ local function onChatted(msg)
         elseif single == "unantispike" or single == "unants" then
     _G.AntiSpike = false
             return
+        elseif sinhle == "fly" then
+            
         elseif single == "cmds" then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/NoobLoTretHub/refs/heads/main/NoobLoTretHub"))()
             return
