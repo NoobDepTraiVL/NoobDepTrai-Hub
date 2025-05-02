@@ -205,7 +205,7 @@ local function onChatted(msg)
             for _, obj in ipairs(workspace:GetDescendants()) do
                 if obj:IsA("BasePart") and obj.CanTouch then
                     local name = obj.Name
-                    if name == "Spikes - Moving" or name == "Spikes" or name == "Fire Pit" or name == "Friend Only Door - Hostile" then
+                    if name == "Spikes" or name == "Fire Pit" or name == "Friend Only Door - Hostile" or name == "aPart" or name == "FirePit" or name == "FriendOnlyDoorHostile" then
                         obj.CanTouch = false
                     end
                 end
