@@ -191,7 +191,7 @@ local function onChatted(msg)
             dropToolFrom(player.Character)
             return
         elseif single == "fly" then
-            local flySpeed = 50
+local flySpeed = 50
 local minSpeed = 0
 local maxSpeed = 1000
 
