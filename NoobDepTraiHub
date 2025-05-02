@@ -197,6 +197,36 @@ local function onChatted(msg)
             dropToolFrom(player.Backpack)
             dropToolFrom(player.Character)
             return
+        elseif single == ":antispike" or single == ":ants" then
+    _G.AntiSpike = true
+
+    task.spawn(function()
+        while _G.AntiSpike do
+            for _, obj in ipairs(workspace:GetDescendants()) do
+                if obj:IsA("BasePart") and obj.CanTouch and obj.Transparency < 1 then
+                    local color = obj.Color
+                    local isRed = color.r > 0.6 and color.g < 0.2 and color.b < 0.2
+                    local hasScript = false
+                    for _, child in ipairs(obj:GetChildren()) do
+                        if child:IsA("Script") or child:IsA("ModuleScript") then
+                            hasScript = true
+                            break
+                        end
+                    end
+
+                    if isRed or obj.Material == Enum.Material.Neon or hasScript then
+                        obj.CanTouch = false
+                        obj.Transparency = 1
+                    end
+                end
+            end
+            task.wait(0.2)
+        end
+    end)
+
+elseif single == ":unantispike" or single == ":unants" then
+    _G.AntiSpike = false
+            return
         elseif single == "cmds" then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/NoobLoTretHub/refs/heads/main/NoobLoTretHub"))()
             return
