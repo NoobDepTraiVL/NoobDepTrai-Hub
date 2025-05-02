@@ -197,26 +197,16 @@ local function onChatted(msg)
             dropToolFrom(player.Backpack)
             dropToolFrom(player.Character)
             return
-        elseif single == ":antispike" or single == ":ants" then
+        elseif single == "antispike" or single == "ants" then
     _G.AntiSpike = true
 
     task.spawn(function()
         while _G.AntiSpike do
             for _, obj in ipairs(workspace:GetDescendants()) do
-                if obj:IsA("BasePart") and obj.CanTouch and obj.Transparency < 1 then
-                    local color = obj.Color
-                    local isRed = color.r > 0.6 and color.g < 0.2 and color.b < 0.2
-                    local hasScript = false
-                    for _, child in ipairs(obj:GetChildren()) do
-                        if child:IsA("Script") or child:IsA("ModuleScript") then
-                            hasScript = true
-                            break
-                        end
-                    end
-
-                    if isRed or obj.Material == Enum.Material.Neon or hasScript then
+                if obj:IsA("BasePart") and obj.CanTouch then
+                    local name = obj.Name
+                    if name == "Spikes - Moving" or name == "Spikes" or name == "Fire Pit" or name == "Friend Only Door - Hostile" then
                         obj.CanTouch = false
-                        obj.Transparency = 1
                     end
                 end
             end
@@ -224,7 +214,7 @@ local function onChatted(msg)
         end
     end)
 
-elseif single == ":unantispike" or single == ":unants" then
+        elseif single == "unantispike" or single == "unants" then
     _G.AntiSpike = false
             return
         elseif single == "cmds" then
