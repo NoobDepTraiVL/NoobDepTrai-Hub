@@ -387,7 +387,7 @@ Minimize.MouseButton1Click:Connect(function()
 end)
             return
         elseif single == "unfly" then
-            local gui = game.Players.LocalPlayer:FindFirstChild("ScreenGui"):FindFirstChild("ScreenGui")
+local gui = game.Players.LocalPlayer:FindFirstChild("ScreenGui"):FindFirstChild("ScreenGui")
 		if gui then
 			gui:Destroy()
 		end
