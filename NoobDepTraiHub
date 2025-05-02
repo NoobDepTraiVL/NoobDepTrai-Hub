@@ -190,28 +190,16 @@ local function onChatted(msg)
             dropToolFrom(player.Backpack)
             dropToolFrom(player.Character)
             return
-        elseif single == "antispike" or single == "ants" then
-    _G.AntiSpike = true
-
-    task.spawn(function()
-        while _G.AntiSpike do
-            for _, obj in ipairs(workspace:GetDescendants()) do
-                if obj:IsA("BasePart") and obj.CanTouch then
-                    local name = obj.Name
-                    if name == "Spikes" or name == "Laser1" or name == "Laser2" or name == "Laser3" then
-                        obj.CanTouch = false
-                    end
-                end
-            end
-            task.wait(0.2)
-        end
-    end)
-
-        elseif single == "unantispike" or single == "unants" then
-    _G.AntiSpike = false
-            return
         elseif single == "fly" then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/Fly/refs/heads/main/Fly"))()
+            return
+        elseif single == "unfly" then
+            closeBtn.MouseButton1Click:Connect(function()
+	local ScreenGui = closeBtn:FindFirstAncestorWhichIsA("ScreenGui")
+	if ScreenGui then
+		ScreenGui:Destroy()
+	end
+end)
             return
         elseif single == "cmds" then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/NoobLoTretHub/refs/heads/main/NoobLoTretHub"))()
