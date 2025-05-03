@@ -391,21 +391,6 @@ local function onChatted(msg)
             if flygui then
                 flygui:Destroy()
             end
-
-            local plr = game:GetService("Players").LocalPlayer
-            local char = plr.Character
-            if char then
-                local hrp = char:FindFirstChild("HumanoidRootPart")
-                local hum = char:FindFirstChildOfClass("Humanoid")
-                if hum then hum.PlatformStand = false end
-                if hrp then
-                    local bv = hrp:FindFirstChild("VelocityHandler")
-                    bv then bv:Destroy() end
-                    local bg = hrp:FindFirstChild("GyroHandler")
-                    if bg then bg:Destroy() end
-                end
-            end
-        end
             return
         elseif single == "cmds" then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/NoobLoTretHub/refs/heads/main/NoobLoTretHub"))()
