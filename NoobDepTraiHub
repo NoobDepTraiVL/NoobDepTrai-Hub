@@ -2,11 +2,10 @@ local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubuserconte
 
 NotificationLibrary:SendNotification("Success", "Load successfully", 5)
 
+NotificationLibrary:SendNotification("Success", "Noob Admin: Your Rank Is 'Noob Admin'", 5)
+
 NotificationLibrary:SendNotification("Info", "Chat ':cmds' to show commands", 5)
 
-NotificationLibrary:SendNotification("Info", "Your Prefix is ':'", 5)
-
-local ScreenGUI = game:GetService("CoreGui"):FindFirstChild("ScreenGUI")
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local player = Players.LocalPlayer
@@ -197,8 +196,8 @@ local function onChatted(msg)
         local maxSpeed = 1000
 
         local TweenService = game:GetService("TweenService")
-        local ScreenGUI = Instance.new("ScreenGui", game:GetService("CoreGui"))
-        ScreenGUI.Name = "FlyControlGui"
+        local ScreenGui = Instance.new("ScreenGui", game:GetService("CoreGui"))
+        ScreenGui.Name = "FlyControlGui"
 
         local Frame = Instance.new("Frame")
         Frame.Name = "MainFrame"
@@ -387,10 +386,11 @@ local function onChatted(msg)
 	        SpeedSlider.Visible = not isMinimized
         end)
             return
-        elseif single == "unfly" then
-            if ScreenGUI then
-                ScreenGUI:Destroy()
-            end
+        elseif single == "rejoin" or single == "rj" then
+        local player = game.Players.LocalPlayer
+        local gamePlaceId = game.PlaceId
+        local teleportService = game:GetService("TeleportService")
+        teleportService:Teleport(gamePlaceId, player)
             return
         elseif single == "cmds" then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/NoobLoTretHub/refs/heads/main/NoobLoTretHub"))()
