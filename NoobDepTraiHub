@@ -6,7 +6,7 @@ NotificationLibrary:SendNotification("Info", "Chat ':cmds' to show commands", 5)
 
 NotificationLibrary:SendNotification("Info", "Your Prefix is ':'", 5)
 
-local flygui = game:GetService("CoreGui"):FindFirstChild("ScreenGui")
+local ScreenGUI = game:GetService("CoreGui"):FindFirstChild("ScreenGUI")
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local player = Players.LocalPlayer
@@ -197,8 +197,8 @@ local function onChatted(msg)
         local maxSpeed = 1000
 
         local TweenService = game:GetService("TweenService")
-        local ScreenGui = Instance.new("ScreenGui", game:GetService("CoreGui"))
-        ScreenGui.Name = "FlyControlGui"
+        local ScreenGUI = Instance.new("ScreenGui", game:GetService("CoreGui"))
+        ScreenGUI.Name = "FlyControlGui"
 
         local Frame = Instance.new("Frame")
         Frame.Name = "MainFrame"
@@ -388,8 +388,8 @@ local function onChatted(msg)
         end)
             return
         elseif single == "unfly" then
-            if flygui then
-                flygui:Destroy()
+            if ScreenGUI then
+                ScreenGUI:Destroy()
             end
             return
         elseif single == "cmds" then
