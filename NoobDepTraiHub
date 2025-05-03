@@ -6,6 +6,7 @@ NotificationLibrary:SendNotification("Info", "Chat ':cmds' to show commands", 5)
 
 NotificationLibrary:SendNotification("Info", "Your Prefix is ':'", 5)
 
+local flygui = game:GetService("CoreGui"):FindFirstChild("ScreenGui")
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local player = Players.LocalPlayer
@@ -387,9 +388,8 @@ local function onChatted(msg)
         end)
             return
         elseif single == "unfly" then
-            local gui = game:GetService("CoreGui"):FindFirstChild("ScreenGui")
-            if gui then
-                gui:Destroy()
+            if flygui then
+                flygui:Destroy()
             end
 
             local plr = game:GetService("Players").LocalPlayer
