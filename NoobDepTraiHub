@@ -9,7 +9,6 @@ NotificationLibrary:SendNotification("Info", "Your Prefix is ':'", 5)
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local player = Players.LocalPlayer
-local FLYGUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/Fly/refs/heads/main/Fly"))()
 
 local noclipEnabled = false
 local noclipConnection
@@ -192,7 +191,7 @@ local function onChatted(msg)
             dropToolFrom(player.Character)
             return
         elseif single == "fly" then
-            FLYGUI
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/Fly/refs/heads/main/Fly"))()
             return
         elseif single == "cmds" then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/NoobLoTretHub/refs/heads/main/NoobLoTretHub"))()
