@@ -386,6 +386,11 @@ local function onChatted(msg)
 	        SpeedSlider.Visible = not isMinimized
         end)
             return
+        elseif single == "unfly" then
+	if ScreenGui then
+		        ScreenGui:Destroy()
+	        end
+        end)
         elseif single == "cmds" then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/NoobLoTretHub/refs/heads/main/NoobLoTretHub"))()
             return
