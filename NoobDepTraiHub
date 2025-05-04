@@ -149,6 +149,8 @@ local function onChatted(msg)
             char:FindFirstChildOfClass("Humanoid").WalkSpeed = tonumber(arg) or 16
         elseif cmdType == "jumppower" or cmdType == "jp" then
             char:FindFirstChildOfClass("Humanoid").JumpPower = tonumber(arg) or 50
+        elseif cmdType == "gravity" or cmdType == "gra" then
+            char:FindFirstChildOfClass("Workspace").Gravity = tonumber(arg) or 200
         end
         return
     end
