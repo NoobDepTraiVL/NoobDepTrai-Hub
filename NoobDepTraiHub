@@ -643,168 +643,168 @@ local function onChatted(msg)
         end)
             return
         elseif single == "cmds" then
-local existing = game:GetService("CoreGui"):FindFirstChild("Cmds(Build And Battle)")
-if existing then
-	existing:Destroy()
-end
-local CoreGui = game:GetService("CoreGui")
-local TweenService = game:GetService("TweenService")
-
-local gui = Instance.new("ScreenGui", CoreGui)
-gui.Name = "Cmds(Build And Battle)"
-gui.ResetOnSpawn = false
-
-local scaleFactor = 0.8
-local baseWidth, baseHeight = 300, 400
-
-local frame = Instance.new("Frame", gui)
-frame.Size = UDim2.new(0, baseWidth * scaleFactor, 0, baseHeight * scaleFactor)
-frame.Position = UDim2.new(0.5, -(baseWidth * scaleFactor) / 2, 0.5, -(baseHeight * scaleFactor) / 2)
-frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-frame.Active = true
-frame.Draggable = true
-frame.Name = "MainFrame"
-Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
-
-local title = Instance.new("TextLabel", frame)
-title.Size = UDim2.new(1, -70, 0, 25 * scaleFactor)
-title.Position = UDim2.new(0, 10, 0, 5)
-title.Text = "Cmds(Build And Battle)"
-title.TextColor3 = Color3.fromRGB(255, 255, 255)
-title.BackgroundTransparency = 1
-title.Font = Enum.Font.GothamBold
-title.TextSize = 16 * scaleFactor
-title.TextXAlignment = Enum.TextXAlignment.Left
-
-local closeBtn = Instance.new("TextButton", frame)
-closeBtn.Size = UDim2.new(0, 22 * scaleFactor, 0, 22 * scaleFactor)
-closeBtn.Position = UDim2.new(1, -30, 0, 5)
-closeBtn.Text = "x"
-closeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-closeBtn.BackgroundColor3 = Color3.fromRGB(50, 0, 0)
-closeBtn.Font = Enum.Font.GothamBold
-closeBtn.TextSize = 14 * scaleFactor
-Instance.new("UICorner", closeBtn).CornerRadius = UDim.new(0, 6)
-closeBtn.MouseButton1Click:Connect(function()
-    gui:Destroy()
-end)
-
-local minBtn = Instance.new("TextButton", frame)
-minBtn.Size = UDim2.new(0, 22 * scaleFactor, 0, 22 * scaleFactor)
-minBtn.Position = UDim2.new(1, -60, 0, 5)
-minBtn.Text = "-"
-minBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-minBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 0)
-minBtn.Font = Enum.Font.GothamBold
-minBtn.TextSize = 14 * scaleFactor
-Instance.new("UICorner", minBtn).CornerRadius = UDim.new(0, 6)
-
-local isMinimized = false
-minBtn.MouseButton1Click:Connect(function()
-    isMinimized = not isMinimized
-    local goalSize = isMinimized
-        and UDim2.new(0, baseWidth * scaleFactor, 0, 50 * scaleFactor)
-        or UDim2.new(0, baseWidth * scaleFactor, 0, baseHeight * scaleFactor)
-    TweenService:Create(frame, TweenInfo.new(0.3, Enum.EasingStyle.Quad), {Size = goalSize}):Play()
-    for _, v in ipairs(frame:GetChildren()) do
-        if v:IsA("TextBox") or v:IsA("ScrollingFrame") then
-            v.Visible = not isMinimized
+        local existing = game:GetService("CoreGui"):FindFirstChild("Cmds(Build And Battle)")
+        if existing then
+                existing:Destroy()
         end
-    end
-end)
+        local CoreGui = game:GetService("CoreGui")
+        local TweenService = game:GetService("TweenService")
 
-local search = Instance.new("TextBox", frame)
-search.Size = UDim2.new(1, -20, 0, 26 * scaleFactor)
-search.Position = UDim2.new(0, 10, 0, 35 * scaleFactor)
-search.PlaceholderText = "Search..." 
-search.Text = ""
-search.TextColor3 = Color3.fromRGB(255, 255, 255)
-search.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-search.Font = Enum.Font.Gotham
-search.TextSize = 14 * scaleFactor
-search.ClearTextOnFocus = false
-Instance.new("UICorner", search).CornerRadius = UDim.new(0, 6)
+        local gui = Instance.new("ScreenGui", CoreGui)
+        gui.Name = "Cmds(Build And Battle)"
+        gui.ResetOnSpawn = false
 
-search.TextXAlignment = Enum.TextXAlignment.Left
+        local scaleFactor = 0.8
+        local baseWidth, baseHeight = 300, 400
 
-local scroll = Instance.new("ScrollingFrame", frame)
-scroll.Size = UDim2.new(1, -20, 1, -80 * scaleFactor)
-scroll.Position = UDim2.new(0, 10, 0, 70 * scaleFactor)
-scroll.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-scroll.BorderSizePixel = 0
-scroll.ScrollBarThickness = 5
-scroll.CanvasSize = UDim2.new(0, 0, 0, 0)
-scroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
-Instance.new("UICorner", scroll).CornerRadius = UDim.new(0, 8)
+        local frame = Instance.new("Frame", gui)
+        frame.Size = UDim2.new(0, baseWidth * scaleFactor, 0, baseHeight * scaleFactor)
+        frame.Position = UDim2.new(0.5, -(baseWidth * scaleFactor) / 2, 0.5, -(baseHeight * scaleFactor) / 2)
+        frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+        frame.Active = true
+        frame.Draggable = true
+        frame.Name = "MainFrame"
+        Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 10)
 
-local listLayout = Instance.new("UIListLayout", scroll)
-listLayout.SortOrder = Enum.SortOrder.LayoutOrder
-listLayout.Padding = UDim.new(0, 4)
+        local title = Instance.new("TextLabel", frame)
+        title.Size = UDim2.new(1, -70, 0, 25 * scaleFactor)
+        title.Position = UDim2.new(0, 10, 0, 5)
+        title.Text = "Cmds(Build And Battle)"
+        title.TextColor3 = Color3.fromRGB(255, 255, 255)
+        title.BackgroundTransparency = 1
+        title.Font = Enum.Font.GothamBold
+        title.TextSize = 16 * scaleFactor
+        title.TextXAlignment = Enum.TextXAlignment.Left
 
-local commands = {
-    ":cmds",
-    ":vipsword (vs)",
-    ":medkit5 (mk5)",
-    ":megavipsword (mvs)",
-    ":medkit15 (mk15)",
-    ":doublegravitycoil (dgc)",
-    ":epickatana (ek)",
-    ":fusioncoil (fc)",
-    ":medkitunlimited (mku)",
-    ":superfreezeray (sfr)",
-    ":teleportlocation (tplc)",
-    "+ vip",
-    "+ megavip",
-    "+ ubervip",
-    "+ secretisland",
-    "+ leaderboard",
-    ":base (b) [1-9]",
-    ":vipitems (viptools, vt, vi)",
-    ":megavipitems (megaviptools, mvt, mvi)",
-    ":ubervipitems (uberviptools, uvt, uvi)",
-    ":allitems (alltools, ats, ais)",
-    ":point",
-    ":knight (kt)",
-    ":overseer (os)",
-    ":korbloxgeneral (kg, kgl)",
-    ":heal (h)",
-    ":speed (ws) [number]",
-    ":jumppower (jp) [number]",
-    ":noclip (nc)",
-    ":unnoclip (clip)",
-    ":reset (rs)",
-    ":gravity (grv)",
-    ":dropitem (droptool, dt, di)",
-    ":dropitems (droptools, dts, dis)",
-    ":fly",
-    ":rejoin (rj)",
-    ":serverhop (svhop)",
-}
+        local closeBtn = Instance.new("TextButton", frame)
+        closeBtn.Size = UDim2.new(0, 22 * scaleFactor, 0, 22 * scaleFactor)
+        closeBtn.Position = UDim2.new(1, -30, 0, 5)
+        closeBtn.Text = "x"
+        closeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+        closeBtn.BackgroundColor3 = Color3.fromRGB(50, 0, 0)
+        closeBtn.Font = Enum.Font.GothamBold
+        closeBtn.TextSize = 14 * scaleFactor
+        Instance.new("UICorner", closeBtn).CornerRadius = UDim.new(0, 6)
+        closeBtn.MouseButton1Click:Connect(function()
+                gui:Destroy()
+        end)
 
-local function createLabel(txt)
-    local lbl = Instance.new("TextLabel", scroll)
-    lbl.Size = UDim2.new(1, -10, 0, 24 * scaleFactor)
-    lbl.Text = txt
-    lbl.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-    lbl.TextColor3 = Color3.fromRGB(255, 255, 255)
-    lbl.Font = Enum.Font.Gotham
-    lbl.TextSize = 13 * scaleFactor
-    lbl.TextXAlignment = Enum.TextXAlignment.Left
-    Instance.new("UICorner", lbl).CornerRadius = UDim.new(0, 6)
-end
+        local minBtn = Instance.new("TextButton", frame)
+        minBtn.Size = UDim2.new(0, 22 * scaleFactor, 0, 22 * scaleFactor)
+        minBtn.Position = UDim2.new(1, -60, 0, 5)
+        minBtn.Text = "-"
+        minBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+        minBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 0)
+        minBtn.Font = Enum.Font.GothamBold
+        minBtn.TextSize = 14 * scaleFactor
+        Instance.new("UICorner", minBtn).CornerRadius = UDim.new(0, 6)
 
-for _, v in ipairs(commands) do
-    createLabel(v)
-end
+        local isMinimized = false
+        minBtn.MouseButton1Click:Connect(function()
+                isMinimized = not isMinimized
+                local goalSize = isMinimized
+                        and UDim2.new(0, baseWidth * scaleFactor, 0, 50 * scaleFactor)
+                        or UDim2.new(0, baseWidth * scaleFactor, 0, baseHeight * scaleFactor)
+                TweenService:Create(frame, TweenInfo.new(0.3, Enum.EasingStyle.Quad), {Size = goalSize}):Play()
+                for _, v in ipairs(frame:GetChildren()) do
+                        if v:IsA("TextBox") or v:IsA("ScrollingFrame") then
+                                v.Visible = not isMinimized
+                        end
+                end
+        end)
 
-search:GetPropertyChangedSignal("Text"):Connect(function()
-    local text = search.Text:lower()
-    for _, v in ipairs(scroll:GetChildren()) do
-        if v:IsA("TextLabel") then
-            v.Visible = text == "" or v.Text:lower():find(text)
+        local search = Instance.new("TextBox", frame)
+        search.Size = UDim2.new(1, -20, 0, 26 * scaleFactor)
+        search.Position = UDim2.new(0, 10, 0, 35 * scaleFactor)
+        search.PlaceholderText = "Search..." 
+        search.Text = ""
+        search.TextColor3 = Color3.fromRGB(255, 255, 255)
+        search.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+        search.Font = Enum.Font.Gotham
+        search.TextSize = 14 * scaleFactor
+        search.ClearTextOnFocus = false
+        Instance.new("UICorner", search).CornerRadius = UDim.new(0, 6)
+
+        search.TextXAlignment = Enum.TextXAlignment.Left
+
+        local scroll = Instance.new("ScrollingFrame", frame)
+        scroll.Size = UDim2.new(1, -20, 1, -80 * scaleFactor)
+        scroll.Position = UDim2.new(0, 10, 0, 70 * scaleFactor)
+        scroll.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+        scroll.BorderSizePixel = 0
+        scroll.ScrollBarThickness = 5
+        scroll.CanvasSize = UDim2.new(0, 0, 0, 0)
+        scroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+        Instance.new("UICorner", scroll).CornerRadius = UDim.new(0, 8)
+
+        local listLayout = Instance.new("UIListLayout", scroll)
+        listLayout.SortOrder = Enum.SortOrder.LayoutOrder
+        listLayout.Padding = UDim.new(0, 4)
+
+        local commands = {
+                ":cmds",
+                ":vipsword (vs)",
+                ":medkit5 (mk5)",
+                ":megavipsword (mvs)",
+                ":medkit15 (mk15)",
+                ":doublegravitycoil (dgc)",
+                ":epickatana (ek)",
+                ":fusioncoil (fc)",
+                ":medkitunlimited (mku)",
+                ":superfreezeray (sfr)",
+                ":teleportlocation (tplc)",
+                "+ vip",
+                "+ megavip",
+                "+ ubervip",
+                "+ secretisland",
+                "+ leaderboard",
+                ":base (b) [1-9]",
+                ":vipitems (viptools, vt, vi)",
+                ":megavipitems (megaviptools, mvt, mvi)",
+                ":ubervipitems (uberviptools, uvt, uvi)",
+                ":allitems (alltools, ats, ais)",
+                ":point",
+                ":knight (kt)",
+                ":overseer (os)",
+                ":korbloxgeneral (kg, kgl)",
+                ":heal (h)",
+                ":speed (ws) [number]",
+                ":jumppower (jp) [number]",
+                ":noclip (nc)",
+                ":unnoclip (clip)",
+                ":reset (rs)",
+                ":gravity (grv)",
+                ":dropitem (droptool, dt, di)",
+                ":dropitems (droptools, dts, dis)",
+                ":fly",
+                ":rejoin (rj)",
+                ":serverhop (svhop)",
+        }
+
+        local function createLabel(txt)
+                local lbl = Instance.new("TextLabel", scroll)
+                lbl.Size = UDim2.new(1, -10, 0, 24 * scaleFactor)
+                lbl.Text = txt
+                lbl.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+                lbl.TextColor3 = Color3.fromRGB(255, 255, 255)
+                lbl.Font = Enum.Font.Gotham
+                lbl.TextSize = 13 * scaleFactor
+                lbl.TextXAlignment = Enum.TextXAlignment.Left
+                Instance.new("UICorner", lbl).CornerRadius = UDim.new(0, 6)
         end
-    end
-end)
+
+        for _, v in ipairs(commands) do
+                createLabel(v)
+        end
+
+        search:GetPropertyChangedSignal("Text"):Connect(function()
+                local text = search.Text:lower()
+                for _, v in ipairs(scroll:GetChildren()) do
+                        if v:IsA("TextLabel") then
+                                v.Visible = text == "" or v.Text:lower():find(text)
+                        end
+                end
+        end)
             return
         end
         local itemPos = getItemPos(single)
