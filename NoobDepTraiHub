@@ -1,5 +1,5 @@
 local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/lobox920/Notification-Library/Main/Library.lua"))()
-if game.PlaceId == 3693333549 then
+if game.PlaceId == 10033751448 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobDepTraiVL/NoobDepTraiVL/refs/heads/main/Noobdeptraivl"))()
 else
     NotificationLibrary:SendNotification("Error", "Not Support Game!", 5)
